@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace AoC2021.Day2
@@ -36,9 +35,35 @@ namespace AoC2021.Day2
         }
 
 
-        public static int Task2(IEnumerable<string> theList) //Answer: 
+        public static int Task2(IEnumerable<string> instructions) //Answer: 1864715580
         {
-            throw new NotImplementedException("Task 2");
+            var rgxInstruction = new Regex(@"([a-z])\w+", RegexOptions.Multiline);
+            var rgxValue = new Regex(@"([0-9])\w*", RegexOptions.Multiline);
+            var depth = 0;
+            var horizontal = 0;
+            var aim = 0;
+
+            foreach (var line in instructions)
+            {
+                var instr = rgxInstruction.Match(line).ToString();
+                var value = int.Parse(rgxValue.Match(line).ToString());
+
+                switch (instr)
+                {
+                    case "forward":
+                        horizontal += value;
+                        depth += aim * value;
+                        break;
+                    case "down":
+                        aim += value;
+                        break;
+                    case "up":
+                        aim -= value;
+                        break;
+                }
+            }
+
+            return horizontal * depth;
         }
     }
 }
