@@ -6,7 +6,7 @@ namespace AoC2021.Day1
 {
     internal static class Main
     {
-        public static void Solve(int dayNumber = 1)
+        public static void Solve(int dayNumber)
         {
             Console.WriteLine($"Day 1:");
             const string filename = "day1";
