@@ -2,19 +2,29 @@
 
 namespace AoC2021
 {
-    class Program
+    internal static class Program
     {
         private const int Year = 2021;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine($"Hello Advent of Code {Year}!");
 
-            //Console.WriteLine("Type in day number to solve: ");
-            //var svada = Console.ReadLine();
-            //var dayNumber = svada;
+            var dayNumber = 1; // Current default
+            if (args.Length > 0) dayNumber = int.Parse(args[0]);
+            Console.WriteLine($"Day to be calculated: Day {dayNumber}.");
+            Console.WriteLine("");
 
-            Day1.Main.Solve();
+            switch (dayNumber)
+            {
+                case 1:
+                    Day1.Main.Solve();
+                    break;
+                case 2:
+                    throw new NotImplementedException("Day 2 not yet implemented.");
+                default:
+                    throw new NotImplementedException($"Day {dayNumber} is not yet implemented.");
+            }
         }
     }
 }
