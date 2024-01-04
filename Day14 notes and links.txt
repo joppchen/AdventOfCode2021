@@ -1,0 +1,45 @@
+https://stackoverflow.com/questions/320448/overlapping-matches-in-regex
+https://regex101.com/r/ET6Rvs/1/
+
+https://stackoverflow.com/questions/49128978/include-the-character-in-positive-lookahead-in-the-result#49129022
+http://regexstorm.net/tester?p=%28%3Fm%29%5E.*%3A%5Cs*&i=Name%3A%20John%0D%0ASurname%3A%20Doe%0D%0AAge%3A%2024&r=
+
+NNCB
+
+CH -> B
+HH -> N
+CB -> H
+NH -> C
+HB -> C
+HC -> B
+HN -> C
+NN -> C
+BH -> H
+NC -> B
+NB -> B
+BN -> B
+BB -> N
+BC -> B
+CC -> N
+CN -> C
+
+First row is template or starting polymer --> string
+
+row 3 to end are the pair insertion rules
+
+for each pair	
+	find pair in rule list
+		on copy of template: insert letter in middle of pair
+	through all pairs, start over with copy of template as the new template
+
+
+functions:
+
+find pairs --> regex?
+
+rule list to dictionary
+
+copy string
+
+insert letter in middle of pair
+
